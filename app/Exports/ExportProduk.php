@@ -21,10 +21,10 @@ class ExportProduk implements FromCollection, WithHeadings, ShouldAutoSize, With
     {
         return Product::select(
             'id',
-            'nama',
-            'deskripsi',
-            'harga',
-            'stok',
+            'name',
+            'description',
+            'price',
+            'stock',
             'created_at'
         )->get();
     }
@@ -33,10 +33,10 @@ class ExportProduk implements FromCollection, WithHeadings, ShouldAutoSize, With
     {
         return [
             $product->id,
-            $product->nama,
-            $product->deskripsi,
-            $product->harga,
-            $product->stok,
+            $product->name,
+            $product->description,
+            $product->price,
+            $product->stock,
             $product->created_at->format('H:i d-m-Y'),
         ];
     }

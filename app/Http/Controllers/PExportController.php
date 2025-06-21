@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportProduk;
 use App\Exports\ProdukExport;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -20,6 +21,6 @@ class PExportController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new ProdukExport, 'daftar-produk.xlsx');
+        return Excel::download(new ExportProduk, 'daftar-produk.xlsx');
     }
 }
